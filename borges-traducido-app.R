@@ -33,9 +33,9 @@ ui <- fluidPage(
             
             # Output: Tabset w/ plot, summary, and table ----
             tabsetPanel(type = "tabs",
-                        tabPanel("Gráfico", plotOutput("plot")),
-                        tabPanel("Resumen", verbatimTextOutput("summary")),
-                        tabPanel("Datos", DTOutput("table"))
+                        tabPanel("Gráfico/Plot", plotOutput("plot")),
+                        tabPanel("Resumen/Summary", verbatimTextOutput("summary")),
+                        tabPanel("Datos/Data", DTOutput("table"))
             )
             
         )
@@ -57,7 +57,7 @@ server <- function(input, output, session) {
         ggplot(data=data(), aes(año, n)) + 
             geom_line(color = "steelblue", size = 1) +
             geom_bar(stat = "identity") +
-            labs(title = "Traducciones por lengua y por año", y = "Número de traducciones", x = "") +
+            labs(title = "Traducciones por lengua y por año / Translations by language and year", y = "Número de traducciones / Number of translations", x = "") +
             theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
         })
     
